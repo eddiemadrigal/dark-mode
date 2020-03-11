@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,40 +7,44 @@ import {
 } from "react-router-dom";
 
 import {
+  Container,
   Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   NavbarText
 } from 'reactstrap';
 
+import Home from './components/Home';
+import About from './components/About'
 import './App.css';
 
 export default function App() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
+      <Container>
+        <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <NavItem>
               <Link to="/">Home</Link>
-            </li>
-            <li>
+            </NavItem>
+            <NavItem>
               <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
-
+            </NavItem>
+          </Nav>
+          <NavbarText>Dark Mode</NavbarText>
+        </Collapse>
+        </Navbar>
         <Switch>
           <Route path="/about">
             <About />
@@ -52,19 +56,7 @@ export default function App() {
             <Home />
           </Route>
         </Switch>
-      </div>
+      </Container>
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }
