@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from '../hooks/useForm';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
 import './Styles.css';
 
 export default function SignUp() {
@@ -20,14 +21,33 @@ export default function SignUp() {
     return ( 
         <> 
             <h1>Sign Up</h1> 
-            <form onSubmit={ handleSubmit } >
-                <fieldset>
-                    <legend>Add New Client</legend>
-                    <input type="text" value={ values.username } onChange={ handleChanges } name="username"/>
-                    <input type="text" value={ values.email } onChange={ handleChanges } name="email"/>
-                    <button>Clear</button> <button>Submit</button>S
-                </fieldset>
-            </form>
+            <Form onSubmit={ handleSubmit } >
+                <FormGroup>
+                    <Label for="username">Username</Label>
+                    <Input 
+                        type="text" 
+                        name="username" 
+                        id="username" 
+                        placeholder="Username"
+                        autoComplete="off"
+                        value={ values.username } 
+                        onChange={ handleChanges }
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="email">Email</Label>
+                    <Input 
+                        type="text" 
+                        name="email" 
+                        id="email" 
+                        placeholder="Email"
+                        autoComplete="off"
+                        value={ values.email } 
+                        onChange={ handleChanges }
+                    />
+                </FormGroup>
+                <Button>Clear</Button> <Button>Submit</Button>
+            </Form>
         </>
     )
 }
