@@ -31,10 +31,10 @@ export default function App() {
     <Router>
       <Container>
         <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarBrand href="/">Dark Mode</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+          <Nav className="ml-auto" navbar>
             <NavItem>
               <Link to="/">Home</Link>
             </NavItem>
@@ -42,7 +42,7 @@ export default function App() {
               <Link to="/about">About</Link>
             </NavItem>
           </Nav>
-          <NavbarText>Dark Mode</NavbarText>
+          
         </Collapse>
         </Navbar>
         <Switch>

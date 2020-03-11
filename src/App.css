@@ -2,3 +2,10 @@
   text-align: center;
 }
 
+li.nav-item {
+  margin-right: 10px;
+}
+
+ul.navbar-nav {
+  padding-top: 3px;
+}
