@@ -13,12 +13,12 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavbarText
+  NavItem
 } from 'reactstrap';
 
 import Home from './components/Home';
-import About from './components/About'
+import About from './components/About';
+import SignUp from './components/SignUp';
 import './App.css';
 
 export default function App() {
@@ -36,10 +36,13 @@ export default function App() {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <Link to="/">Home</Link>
+              <Link className="link" to="/">Home</Link>
             </NavItem>
             <NavItem>
-              <Link to="/about">About</Link>
+              <Link className="link" to="/signup">Sign Up</Link>
+            </NavItem>
+            <NavItem>
+              <Link className="link" to="/about">About</Link>
             </NavItem>
           </Nav>
           
@@ -48,6 +51,9 @@ export default function App() {
         <Switch>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/signup">
+            <SignUp />
           </Route>
           <Route path="/">
             <Home />

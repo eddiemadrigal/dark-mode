@@ -3,9 +3,13 @@
 }
 
 li.nav-item {
-  margin-right: 10px;
+  margin-left: 20px;
 }
 
 ul.navbar-nav {
   padding-top: 3px;
+}
+
+.link {
+  color: #333;
 }
