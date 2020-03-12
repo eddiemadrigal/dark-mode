@@ -19,6 +19,7 @@ import {
 import Home from './components/Home';
 import About from './components/About';
 import SignUp from './components/SignUp';
+import Body from './components/Body';
 
 import { useStyles } from './hooks/useStyles';
 
@@ -33,38 +34,41 @@ export default function App() {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Router>
-      <Container className={ classes.componentBackground }>
-        <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Dark Mode</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <Link className="link" to="/">Home</Link>
-            </NavItem>
-            <NavItem>
-              <Link className="link" to="/signup">Sign Up</Link>
-            </NavItem>
-            <NavItem>
-              <Link className="link" to="/about">About</Link>
-            </NavItem>
-          </Nav>
-          
-        </Collapse>
-        </Navbar>
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/signup">
-            <SignUp />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </Container>
-    </Router>
+    <div>
+      <Router>
+        <Container className={ classes.componentBackground }>
+          <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">Dark Mode</NavbarBrand>
+          <NavbarToggler onClick={toggle} />
+          <Collapse isOpen={isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <Link className="link" to="/">Home</Link>
+              </NavItem>
+              <NavItem>
+                <Link className="link" to="/signup">Sign Up</Link>
+              </NavItem>
+              <NavItem>
+                <Link className="link" to="/about">About</Link>
+              </NavItem>
+            </Nav>
+            
+          </Collapse>
+          </Navbar>
+          <Switch>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/signup">
+              <SignUp />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </Container>
+      </Router>
+      <Body />
+    </div>
   );
 }

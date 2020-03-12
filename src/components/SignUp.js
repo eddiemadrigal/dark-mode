@@ -15,7 +15,7 @@ export default function SignUp() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        alert(values.username);
+        alert('Username: ' + values.username + '\nEmail: ' + values.email);
         clearForm(e);
     };
 
