@@ -6,7 +6,7 @@ export const useStyles = makeStyles ( theme => ({
         marginTop: "30px",
         background: "#333",
         paddingTop: "30px",
-        paddingBottom: "30px",
+        paddingBottom: "50px",
         borderRadius: "10px"
     }
 
