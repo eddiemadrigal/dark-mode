@@ -13,3 +13,7 @@ ul.navbar-nav {
 .link {
   color: #333;
 }
+
+.link:hover {
+  color: #333;
+} 

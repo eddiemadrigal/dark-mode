@@ -19,9 +19,14 @@ import {
 import Home from './components/Home';
 import About from './components/About';
 import SignUp from './components/SignUp';
+
+import { useStyles } from './hooks/useStyles';
+
 import './App.css';
 
-export default function App() {
+export default function App() { 
+
+  const classes = useStyles();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -29,7 +34,7 @@ export default function App() {
 
   return (
     <Router>
-      <Container>
+      <Container className={ classes.componentBackground }>
         <Navbar color="light" light expand="md">
         <NavbarBrand href="/">Dark Mode</NavbarBrand>
         <NavbarToggler onClick={toggle} />
